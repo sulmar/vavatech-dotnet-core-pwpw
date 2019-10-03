@@ -49,6 +49,7 @@ namespace Vavatech.DotnetCore.WebApi
             }
 
            // app.UseHttpsRedirection();
+
             app.UseMvc();
         }
     }

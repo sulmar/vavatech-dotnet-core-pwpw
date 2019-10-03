@@ -53,6 +53,22 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
             throw new NotImplementedException();
         }
 
+        // api/customers/10/orders
+
+        [HttpGet]
+        [Route("{id}/orders")]
+        public IActionResult GetOrders(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // api/orders?customerId=10
+        //[Route("~api/orders?customerId={id}")]
+        //public IActionResult Get(int id)
+        //{
+        //    return Ok();
+        //}
+
         [HttpPost]
         public IActionResult Post([FromBody] Customer customer)
         {

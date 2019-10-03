@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.Fakers"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.WebApi", "Vavatech.DotnetCore.WebApi\Vavatech.DotnetCore.WebApi.csproj", "{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.Api", "Vavatech.DotnetCore.Api\Vavatech.DotnetCore.Api.csproj", "{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}.Release|x64.Build.0 = Release|Any CPU
 		{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}.Release|x86.Build.0 = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|x64.Build.0 = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Debug|x86.Build.0 = Debug|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x64.Build.0 = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
