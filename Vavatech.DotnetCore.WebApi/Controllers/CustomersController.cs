@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Vavatech.DotnetCore.IRepositories;
+using Vavatech.DotnetCore.Models.SearchCriterias;
 
 namespace Vavatech.DotnetCore.WebApi.Controllers
 {
+
     [Route("api/customers")]
     public class CustomersV2Controller : CustomersController
     {
@@ -27,6 +29,23 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
             return Ok(customer);
         }
 
+        // api/customers?city=Warszawa&country=Poland
+
+        //[HttpGet()]
+        //public IActionResult Get([FromQuery] string city, [FromQuery] string country)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        // api/customers?city=Warszawa&country=Poland
+        [HttpGet()]
+        public IActionResult Get([FromQuery] CustomerSearchCriteria criteria)
+        {
+
+            throw new NotImplementedException();
+        }
+
+        // api/customers/PL4324325454
         [HttpGet("{pesel}", Order = 1)]
         public IActionResult Get(string pesel)
         {
@@ -49,12 +68,12 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         // curl -X GET http://localhost:5000/api/customers
         // curl -X GET https://localhost:5001/api/customers
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var customers = customerRepository.Get();
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    var customers = customerRepository.Get();
 
-            return Ok(customers);
-        }
+        //    return Ok(customers);
+        //}
     }
 }

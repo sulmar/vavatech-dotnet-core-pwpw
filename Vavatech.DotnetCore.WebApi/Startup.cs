@@ -30,6 +30,7 @@ namespace Vavatech.DotnetCore.WebApi
         {
             services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
             services.AddScoped<CustomerFaker>();
+            services.AddScoped<AddressFaker>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
