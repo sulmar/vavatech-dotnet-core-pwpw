@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bogus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vavatech.DotnetCore.Fakers;
@@ -12,11 +13,22 @@ namespace Vavatech.DotnetCore.FakeRepositories
     public class FakeCustomerRepository : ICustomerRepository
     {
         private readonly ICollection<ICustomer> customers;
+        private readonly CustomerFaker customerFaker;
 
-        public FakeCustomerRepository(CustomerFaker customerFaker) 
-            => this.customers = customerFaker.Generate(100).OfType<ICustomer>().ToList();
+        public FakeCustomerRepository(CustomerFaker customerFaker)
+        {
+            this.customerFaker = customerFaker;
+            this.customers = customerFaker.Generate(100).OfType<ICustomer>().ToList();
+        }
 
-        public void Add(ICustomer entity) => customers.Add(entity);
+        public void Add(ICustomer entity)
+        {
+            entity.Id = customerFaker.Generate().Id;
+
+            customers.Add(entity);
+        }
+
+        public bool Exists(int id) => customers.Any(c => c.Id == id);
 
         public IEnumerable<ICustomer> Get() => customers;
 

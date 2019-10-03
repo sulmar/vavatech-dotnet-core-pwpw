@@ -11,6 +11,7 @@ namespace Vavatech.DotnetCore.IRepositories
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Remove(TKey id);
+        bool Exists(TKey id);
     }
 
 }

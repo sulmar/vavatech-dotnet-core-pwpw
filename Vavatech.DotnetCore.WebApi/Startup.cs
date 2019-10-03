@@ -28,9 +28,9 @@ namespace Vavatech.DotnetCore.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
-            services.AddScoped<CustomerFaker>();
-            services.AddScoped<AddressFaker>();
+            services.AddSingleton<ICustomerRepository, FakeCustomerRepository>();
+            services.AddSingleton<CustomerFaker>();
+            services.AddSingleton<AddressFaker>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

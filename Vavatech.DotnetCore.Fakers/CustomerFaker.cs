@@ -11,7 +11,7 @@ namespace Vavatech.DotnetCore.Fakers
         public CustomerFaker(AddressFaker addressFaker)
         {
             StrictMode(true);
-            // UseSeed(1);
+            UseSeed(1);
             RuleFor(p => p.Id, f => f.IndexFaker);
             RuleFor(p => p.FirstName, f => f.Person.FirstName);
             RuleFor(p => p.LastName, f => f.Person.LastName);
