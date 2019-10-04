@@ -7,15 +7,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.Console
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.Models", "Vavatech.DotnetCore.Models\Vavatech.DotnetCore.Models.csproj", "{CFE0A166-8A34-419B-9171-066E99FA7AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.IRepositories", "Vavatech.DotnetCore.IRepositories\Vavatech.DotnetCore.IRepositories.csproj", "{E9245EC1-CA2A-4CC8-98F4-94998EC5A13F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.IRepositories", "Vavatech.DotnetCore.IRepositories\Vavatech.DotnetCore.IRepositories.csproj", "{E9245EC1-CA2A-4CC8-98F4-94998EC5A13F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.FakeRepositories", "Vavatech.DotnetCore.FakeRepositories\Vavatech.DotnetCore.FakeRepositories.csproj", "{2B08EC25-D070-4C71-936B-C5CE4F92E1A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.FakeRepositories", "Vavatech.DotnetCore.FakeRepositories\Vavatech.DotnetCore.FakeRepositories.csproj", "{2B08EC25-D070-4C71-936B-C5CE4F92E1A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.Fakers", "Vavatech.DotnetCore.Fakers\Vavatech.DotnetCore.Fakers.csproj", "{46E86369-50E5-4C66-8976-7BF0DB476498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.Fakers", "Vavatech.DotnetCore.Fakers\Vavatech.DotnetCore.Fakers.csproj", "{46E86369-50E5-4C66-8976-7BF0DB476498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.WebApi", "Vavatech.DotnetCore.WebApi\Vavatech.DotnetCore.WebApi.csproj", "{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.WebApi", "Vavatech.DotnetCore.WebApi\Vavatech.DotnetCore.WebApi.csproj", "{8A417525-5AD1-48A5-A996-F7EC9C8AF37C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.Api", "Vavatech.DotnetCore.Api\Vavatech.DotnetCore.Api.csproj", "{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.DotnetCore.Api", "Vavatech.DotnetCore.Api\Vavatech.DotnetCore.Api.csproj", "{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.ApiRepositories", "Vavatech.DotnetCore.ApiRepositories\Vavatech.DotnetCore.ApiRepositories.csproj", "{8DB006E8-F598-495A-B58E-EF44A02EE268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.SignalR", "Vavatech.DotnetCore.SignalR\Vavatech.DotnetCore.SignalR.csproj", "{76862DDC-9CD2-46BD-82D2-34E67FC9C668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.SenderClient", "Vavatech.DotnetCore.SenderClient\Vavatech.DotnetCore.SenderClient.csproj", "{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.DotnetCore.ReceiverClient", "Vavatech.DotnetCore.ReceiverClient\Vavatech.DotnetCore.ReceiverClient.csproj", "{60B0CA55-D048-4C81-B362-48DB91F14713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +119,54 @@ Global
 		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x64.Build.0 = Release|Any CPU
 		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x86.ActiveCfg = Release|Any CPU
 		{8E8DB0F3-BA2E-4CB8-9B2E-F211F58CFC24}.Release|x86.Build.0 = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|x64.Build.0 = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Debug|x86.Build.0 = Debug|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|x64.ActiveCfg = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|x64.Build.0 = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|x86.ActiveCfg = Release|Any CPU
+		{8DB006E8-F598-495A-B58E-EF44A02EE268}.Release|x86.Build.0 = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|x64.Build.0 = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Debug|x86.Build.0 = Debug|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|x64.ActiveCfg = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|x64.Build.0 = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|x86.ActiveCfg = Release|Any CPU
+		{76862DDC-9CD2-46BD-82D2-34E67FC9C668}.Release|x86.Build.0 = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|x64.Build.0 = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Debug|x86.Build.0 = Debug|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|x64.ActiveCfg = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|x64.Build.0 = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|x86.ActiveCfg = Release|Any CPU
+		{66839EB6-A8E7-4101-BC7C-76E80C62FA7A}.Release|x86.Build.0 = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|x64.Build.0 = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Debug|x86.Build.0 = Debug|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|x64.ActiveCfg = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|x64.Build.0 = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|x86.ActiveCfg = Release|Any CPU
+		{60B0CA55-D048-4C81-B362-48DB91F14713}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

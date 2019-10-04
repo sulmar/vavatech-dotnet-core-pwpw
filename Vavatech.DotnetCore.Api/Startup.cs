@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Owin;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Vavatech.DotnetCore.Api.Middlewares;
 
@@ -21,6 +22,7 @@ namespace Vavatech.DotnetCore.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRouting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,12 +80,57 @@ namespace Vavatech.DotnetCore.Api
 
             app.Map("/dashboard", HandleDashboard);
 
+            // api/sensors
+            // api/sensors/temp
+            // api/sensors/humidity
+
+            app.Map("/api/sensors", node =>
+            {
+                node.Map("/temp", TempDelegate);
+                node.Map("/humidity", HumidityDelegate);
+                node.MapWhen(context => context.Request.Method == "POST", AddSensorDelegate);
+                node.Map(string.Empty, SensorsDelegate);
+            });
+
+            var routeBuilder = new RouteBuilder(app);
+            routeBuilder.MapGet("/api/orders/{id:int}",
+                request => request.Response.WriteAsync($"Order id {request.GetRouteValue("id")}" ));
+
+            routeBuilder.MapPost("/api/orders", request => request.Response.WriteAsync("Created"));
+            IRouter router = routeBuilder.Build();
+            app.UseRouter(router);
+
+
             app.Run(async (context) =>
             {
                 context.Response.StatusCode = 401;
 
                 await context.Response.WriteAsync("zboczyłes");
             });
+        }
+
+        private void AddSensorDelegate(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                context.Response.StatusCode = 201;
+                await context.Response.WriteAsync("sensor created");
+            });
+        }
+
+        private void SensorsDelegate(IApplicationBuilder app)
+        {
+            app.Run(async context => await context.Response.WriteAsync("sensors"));
+        }
+
+        private void HumidityDelegate(IApplicationBuilder app)
+        {
+            app.Run(async context => await context.Response.WriteAsync("96%"));
+        }
+
+        private void TempDelegate(IApplicationBuilder app)
+        {
+            app.Run(async context => await context.Response.WriteAsync("24C"));
         }
 
         private void HandleDashboard(IApplicationBuilder app)

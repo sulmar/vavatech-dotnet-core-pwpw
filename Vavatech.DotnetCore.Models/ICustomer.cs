@@ -6,8 +6,10 @@
         string LastName { get; set; }
         string Email { get; set; }
         bool IsRemoved { get; set; }
-        IAddress HomeAddress { get; set; }
-        IAddress InvoiceAddress { get; set; }
+        Address HomeAddress { get; set; }
+        Address InvoiceAddress { get; set; }
+        string UserName { get; set; }
+        string HashPassword { get; set; }
     }
 
     public interface IAddress

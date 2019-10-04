@@ -9,9 +9,11 @@ namespace Vavatech.DotnetCore.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Pesel { get; set; }
-        public IAddress HomeAddress { get; set; }
-        public IAddress InvoiceAddress { get; set; }
+        public Address HomeAddress { get; set; }
+        public Address InvoiceAddress { get; set; }
         public bool IsRemoved { get; set; }
+        public string UserName { get; set; }
+        public string HashPassword { get; set; }
     }
 
 

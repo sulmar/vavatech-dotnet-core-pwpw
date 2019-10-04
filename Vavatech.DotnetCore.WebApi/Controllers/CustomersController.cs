@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Vavatech.DotnetCore.IRepositories;
 using Vavatech.DotnetCore.Models;
@@ -9,7 +11,7 @@ using Vavatech.DotnetCore.Models.SearchCriterias;
 
 namespace Vavatech.DotnetCore.WebApi.Controllers
 {
-
+    [Authorize(Roles = "Developer, Trainer")]
     [Route("api/customers")]
     public class CustomersV2Controller : CustomersController
     {
@@ -30,6 +32,7 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
             return Ok(customer);
         }
 
+
         // api/customers?city=Warszawa&country=Poland
 
         //[HttpGet()]
@@ -39,12 +42,12 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         //}
 
         // api/customers?city=Warszawa&country=Poland
-        [HttpGet()]
-        public IActionResult Get([FromQuery] CustomerSearchCriteria criteria)
-        {
+        //[HttpGet()]
+        //public IActionResult Get([FromQuery] CustomerSearchCriteria criteria)
+        //{
 
-            throw new NotImplementedException();
-        }
+        //    throw new NotImplementedException();
+        //}
 
         // api/customers/PL4324325454
         [HttpGet("{pesel}", Order = 1)]
@@ -70,9 +73,15 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         //}
 
         [HttpPost]
-        public IActionResult Post([FromBody] Customer customer)
+        public IActionResult Post([FromServices] IEnumerable<ISenderService> senderServices, [FromBody] Customer customer)
         {
             customerRepository.Add(customer);
+
+            foreach (var senderService in senderServices)
+            {
+                senderService.Send(customer);
+            }
+         
 
             // return Created($"http://localhost:5000/api/customers/{customer.Id}", customer);
 
@@ -136,12 +145,24 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         // curl -X GET http://localhost:5000/api/customers
         // curl -X GET https://localhost:5001/api/customers
 
-        //[HttpGet]
-        //public IActionResult Get()
-        //{
-        //    var customers = customerRepository.Get();
+        [HttpGet]
+        public IActionResult Get()
+        {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return Unauthorized();
+            }
 
-        //    return Ok(customers);
-        //}
+            if (this.User.IsInRole("Developer"))
+            {
+
+            }
+
+
+
+            var customers = customerRepository.Get();
+
+            return Ok(customers);
+        }
     }
 }

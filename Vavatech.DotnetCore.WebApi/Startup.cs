@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Options;
 using Vavatech.DotnetCore.FakeRepositories;
 using Vavatech.DotnetCore.Fakers;
 using Vavatech.DotnetCore.IRepositories;
+using Vavatech.DotnetCore.WebApi.Handlers;
 
 namespace Vavatech.DotnetCore.WebApi
 {
@@ -31,6 +33,12 @@ namespace Vavatech.DotnetCore.WebApi
             services.AddSingleton<ICustomerRepository, FakeCustomerRepository>();
             services.AddSingleton<CustomerFaker>();
             services.AddSingleton<AddressFaker>();
+            services.AddSingleton<ISenderService, MockSmsService>();
+            services.AddSingleton<ISenderService, MockFacebookService>();
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -48,7 +56,9 @@ namespace Vavatech.DotnetCore.WebApi
                 app.UseHsts();
             }
 
-           // app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }

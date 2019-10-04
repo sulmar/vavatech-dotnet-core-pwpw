@@ -59,6 +59,14 @@ namespace Vavatech.DotnetCore.FakeRepositories
 
         public void Remove(int id) => customers.Remove(Get(id));
 
+        public bool TryAthorize(string username, string password, out ICustomer customer)
+        {
+            customer = customers
+                .SingleOrDefault(c => c.UserName == username && c.HashPassword == password);
+
+            return customer != null;
+        }
+
         public void Update(ICustomer entity)
         {
             throw new NotImplementedException();
