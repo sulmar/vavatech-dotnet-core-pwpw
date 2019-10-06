@@ -1,4 +1,6 @@
-﻿namespace Vavatech.DotnetCore.Models
+﻿using System;
+
+namespace Vavatech.DotnetCore.Models
 {
     public interface ICustomer : IEntity<int>
     {
@@ -10,6 +12,7 @@
         Address InvoiceAddress { get; set; }
         string UserName { get; set; }
         string HashPassword { get; set; }
+        DateTime Birthday { get; set; }
     }
 
     public interface IAddress

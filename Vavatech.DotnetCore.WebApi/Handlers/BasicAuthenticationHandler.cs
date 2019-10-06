@@ -44,8 +44,10 @@ namespace Vavatech.DotnetCore.WebApi.Handlers
 
             ClaimsIdentity identity = new ClaimsIdentity("Basic");
             identity.AddClaim(new Claim(ClaimTypes.Email, customer.Email));
+            identity.AddClaim(new Claim(ClaimTypes.DateOfBirth, customer.Birthday.ToString() ));
 
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Developer"));
+
+           // identity.AddClaim(new Claim(ClaimTypes.Role, "Developer"));
             identity.AddClaim(new Claim(ClaimTypes.Role, "Trainer"));
 
             ClaimsPrincipal principal = new ClaimsPrincipal(identity);

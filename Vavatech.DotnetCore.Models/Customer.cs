@@ -14,6 +14,7 @@ namespace Vavatech.DotnetCore.Models
         public bool IsRemoved { get; set; }
         public string UserName { get; set; }
         public string HashPassword { get; set; }
+        public DateTime Birthday { get; set; }
     }
 
 

@@ -11,7 +11,9 @@ using Vavatech.DotnetCore.Models.SearchCriterias;
 
 namespace Vavatech.DotnetCore.WebApi.Controllers
 {
-    [Authorize(Roles = "Developer, Trainer")]
+    // [Authorize(Roles = "Developer, Trainer")]
+
+    [Authorize(Policy="RequireDeveloperOnly")]
     [Route("api/customers")]
     public class CustomersV2Controller : CustomersController
     {
@@ -50,6 +52,7 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         //}
 
         // api/customers/PL4324325454
+        [Authorize(Policy="MinAge")]
         [HttpGet("{pesel}", Order = 1)]
         public IActionResult Get(string pesel)
         {
@@ -72,6 +75,8 @@ namespace Vavatech.DotnetCore.WebApi.Controllers
         //    return Ok();
         //}
 
+
+        [Authorize(Policy="HasEmail")]
         [HttpPost]
         public IActionResult Post([FromServices] IEnumerable<ISenderService> senderServices, [FromBody] Customer customer)
         {

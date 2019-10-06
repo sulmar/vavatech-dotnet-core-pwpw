@@ -20,8 +20,9 @@ namespace Vavatech.DotnetCore.Fakers
             RuleFor(p => p.HomeAddress, f => addressFaker.Generate());
             RuleFor(p => p.InvoiceAddress, f => addressFaker.Generate());
             RuleFor(p => p.Email, (f, c) => $"{c.FirstName}.{c.LastName}@vavatech.pl");
-            RuleFor(p => p.UserName, f => f.Person.UserName);
+            RuleFor(p => p.UserName, (f,c) => $"marcin{c.Id}");
             RuleFor(p => p.HashPassword, f => "12345");
+            RuleFor(p => p.Birthday, f=>f.Date.Past(60, DateTime.Today));
         }
     }
 }
