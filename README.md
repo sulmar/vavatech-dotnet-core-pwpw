@@ -162,6 +162,31 @@ Plik Startup.cs
  }
 ~~~
 
+### Przekazywanie formatu poprzez adres URL
+
+// GET api/customers/10
+// GET api/customers/10.json
+// GET api/customers/10.xml
+
+~~~ csharp
+[Route("api/[controller]")]
+public class CustomersController : ControllerBase
+{
+    [FormatFilter]
+    [HttpGet("{id:int}.{format?}")]
+    public IActionResult GetById(int id)
+    {
+        if (!customerRepository.IsExists(id))
+            return NotFound();
+
+        var customer = customerRepository.Get(id);
+
+        return Ok(customer);
+    }
+}
+~~~
+
+
 ## Autentyfikacja
 
 
