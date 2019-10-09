@@ -164,11 +164,14 @@ Plik Startup.cs
 
 ### Przekazywanie formatu poprzez adres URL
 
+
+
+~~~ csharp
+
 // GET api/customers/10
 // GET api/customers/10.json
 // GET api/customers/10.xml
 
-~~~ csharp
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
 {
