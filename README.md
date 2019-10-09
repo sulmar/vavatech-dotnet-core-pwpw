@@ -26,8 +26,7 @@
 - ``` dotnet add package {package-name} ``` - dodanie pakietu nuget do projektu
 - ``` dotnet remove package {package-name} ``` - usunięcie pakietu nuget do projektu
 
-## Opcje
-
+## Konfiguracja
 
 - Utworzenie klasy opcji
 ~~~ csharp
