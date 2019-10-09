@@ -124,7 +124,7 @@ public class Startup
 | PATCH  | Zmień częściowo       |
 | HEAD   | Czy zasób istnieje    |
 
-### Wyłączenie generowania wartości null w jsonie
+## Opcje serializacji json
 
 Plik Startup.cs
 
@@ -132,44 +132,15 @@ Plik Startup.cs
 
 public void ConfigureServices(IServiceCollection services)
 {
-  services
+  services.AddMvc()
     .AddJsonOptions(options =>
     {
-        options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;            
-    });
+        options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore; // Wyłączenie generowania wartości null w jsonie
+        options.SerializerSettings.Converters.Add(new StringEnumConverter(camelCaseText: true));  // Serializacja enum jako tekst
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; // Zapobieganie cyklicznej serializacji
+
+    })
 }
-~~~
-
-### Serializacja enum jako tekst 
-
-Plik Startup.cs
-
-~~~ csharp
-
-public void ConfigureServices(IServiceCollection services)
-{
-  services
-    .AddJsonOptions(options =>
-     {
-         options.SerializerSettings.Converters.Add(new StringEnumConverter(camelCaseText: true));                       
-     });
-}
-
-~~~
-
-### Zapobieganie cyklicznej serializacji
-
-Plik Startup.cs
-
-~~~ csharp
-public void ConfigureServices(IServiceCollection services)
-{
-  services
-      .AddJsonOptions(options =>
-         {
-             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-         });
-   } 
 ~~~
 
 ### Włączenie obsługi XML
