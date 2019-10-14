@@ -725,7 +725,7 @@ public async Task RemoveFromGroup(string groupName)
 ## Testy jednostkowe
 
 
-### MSUnit
+### NUnit
 
 
 Utworzenie projektu
