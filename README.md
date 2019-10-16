@@ -5,7 +5,7 @@
 - ``` dotnet --list-sdks ``` - wyświetlenie listy zainstalowanych SDK
 - ``` dotnet new globaljson ``` - utworzenie pliku global.json
 - ``` dotnet new globaljson --sdk-version {version} ``` - utworzenie pliku global.json i ustawienie wersji SDK
-- ``` dotnet new {template} ``` - utworzenie nowego projektu na podstawie wybranego szablonu
+- ``` dotnet new --list ``` - wyświetlenie listy dostępnych szablonów
 - ``` dotnet new {template} -o {output} ``` - utworzenie nowego projektu w podanym katalogu
 - ``` dotnet restore ``` - pobranie bibliotek nuget na podstawie pliku projektu
 - ``` dotnet build ``` - kompilacja projektu
